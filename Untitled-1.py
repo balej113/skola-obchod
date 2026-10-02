@@ -16,6 +16,7 @@ while True:
             print(produkty[i], "-", druhy[i], "-", ceny[i], "€ - sklad:", sklad[i])
 
     vyber = input("\nNapíš názov produktu (alebo 'koniec'): ").lower()
+    
 
     if vyber == "koniec":
         break
@@ -53,6 +54,12 @@ if clubcard == "ano":
 else:
     print("Clubcard nebola použitá.")
 
+platba = input("Budete platiť kartu alebo v hotovosti? (karta/hotovosť): ").lower()
+
+if platba == "karta":
+    print("Platba kartou bola úspešná.")
+elif platba == "hotovosť":
+    print("Platba v hotovosti bola úspešná.")   
 
 # KUPÓN
 kupon = input("\nMáš kupón? (ano/nie): ").lower()
@@ -68,3 +75,11 @@ if kupon == "ano":
         print("Môžeš použiť iba jeden kupón na nákup.")
 
 print("\nCelková cena:", round(celkova_cena, 2), "€")
+charita = input("Chcete prispiet na charitu? (ano/nie): ").lower()
+
+      if charita == "ano":
+          prispiet = input("Koľko chcete prispieť na charitu? (v €): ")
+          celkova_cena = celkova_cena + float(prispiet)
+          print("Ďakujeme za váš príspevok na charitu!")
+          if charita == "nie": 
+              print("Nie je potrebné prispievať na charitu. Ďakujeme za nákup!")
