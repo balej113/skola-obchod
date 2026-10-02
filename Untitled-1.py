@@ -57,9 +57,13 @@ else:
 platba = input("Budete platiť kartu alebo v hotovosti? (karta/hotovosť): ").lower()
 
 if platba == "karta":
-    print("Platba kartou bola úspešná.")
+    print("Platba kartou prilozte k terminálu.")
+    platba_karta = input("Zadajte PIN: ")
+    if len(platba_karta) == 4 and platba_karta.isdigit():
+        print("Platba kartou bola úspešná.")
 elif platba == "hotovosť":
     print("Platba v hotovosti bola úspešná.")   
+    
 
 # KUPÓN
 kupon = input("\nMáš kupón? (ano/nie): ").lower()
@@ -73,13 +77,5 @@ if kupon == "ano":
 
     if druhy_kupon == "ano":
         print("Môžeš použiť iba jeden kupón na nákup.")
-
-print("\nCelková cena:", round(celkova_cena, 2), "€")
-charita = input("Chcete prispiet na charitu? (ano/nie): ").lower()
-
-      if charita == "ano":
-          prispiet = input("Koľko chcete prispieť na charitu? (v €): ")
-          celkova_cena = celkova_cena + float(prispiet)
-          print("Ďakujeme za váš príspevok na charitu!")
-          if charita == "nie": 
-              print("Nie je potrebné prispievať na charitu. Ďakujeme za nákup!")
+        
+print("Cena po zľavách:", round(celkova_cena, 2), "€")
