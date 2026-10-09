@@ -1,3 +1,4 @@
+# main.py
 produkty = ["jablko", "banan", "mrkva", "zemiak", "mlieko"]
 ceny = [0.50, 0.45, 0.30, 0.25, 1.20]
 druhy = ["ovocie", "ovocie", "zelenina", "zelenina", "mliečne"]
